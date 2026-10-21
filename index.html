@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obsidian &amp; Lime Video Editor Portfolio</title>
+    <meta
+      name="description"
+      content="A modern, responsive video editor and post-production portfolio built with semantic HTML, custom CSS, and vanilla JavaScript in an Obsidian Black and Electric Lime palette."
+    />
+    <meta property="og:title" content="Obsidian &amp; Lime Video Editor Portfolio" />
+    <meta
+      property="og:description"
+      content="A modern, responsive video editor and post-production portfolio built with semantic HTML, custom CSS, and vanilla JavaScript in an Obsidian Black and Electric Lime palette."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Outfit (Display), Plus Jakarta Sans (Body), JetBrains Mono (Timecode/Specs) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Subtle Top Viewport Scroll Progress Bar (Electric Lime) -->
+    <div
+      class="scroll-progress-track"
+      id="scroll-progress-track"
+      role="progressbar"
+      aria-label="Page scroll progress"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+    >
+      <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Top Navigation Header (Strict 3-Zone Contract) -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <!-- Zone 1: Single-line Brand Wordmark -->
+        <a href="#top" class="brand-logo" aria-label="Home — [Your Name]">
+          [Your Name]
+        </a>
+
+        <!-- Zone 2: Concise Single-Line Navigation Links -->
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <a href="#about" class="nav-link" data-section="about">About</a>
+          <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+          <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </nav>
+
+        <!-- Zone 3: 1 Primary Action + Mobile Menu Toggle -->
+        <div class="header-actions">
+          <a href="#contact" class="btn btn-primary btn-sm header-cta">Contact Me</a>
+          <button
+            type="button"
+            class="mobile-menu-toggle"
+            id="mobile-menu-btn"
+            aria-expanded="false"
+            aria-controls="mobile-nav-drawer"
+            aria-label="Toggle navigation menu"
+          >
+            <span class="hamburger-box" aria-hidden="true">
+              <span class="hamburger-line line-1"></span>
+              <span class="hamburger-line line-2"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Responsive Mobile Menu Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer" hidden>
+        <nav class="container mobile-nav-links" aria-label="Mobile Navigation">
+          <a href="#about" class="mobile-nav-link">01. About</a>
+          <a href="#skills" class="mobile-nav-link">02. Skills</a>
+          <a href="#projects" class="mobile-nav-link">03. Projects</a>
+          <a href="#contact" class="mobile-nav-link">04. Contact</a>
+          <div class="mobile-nav-footer">
+            <a href="#contact" class="btn btn-primary btn-block mobile-cta-link">
+              Contact Me
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- 1. HERO SECTION -->
+      <section class="hero-section section-reveal" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Left Column: Typographic Hierarchy & Primary CTAs -->
+            <div class="hero-copy">
+              <p class="eyebrow">Video Editor &amp; Post-Production &middot; Commercial &middot; Narrative &middot; Social</p>
+              <h1 id="hero-heading" class="hero-title">
+                Hi, I&rsquo;m <span class="text-lime placeholder-token">[Your Name]</span>. I shape raw footage into high-impact stories.
+              </h1>
+              <p class="hero-description placeholder-token">
+                [Short Description Placeholder: e.g., I am a video editor focused on rhythmic pacing, narrative assembly, colour grading, and immersive sound design for commercials, documentaries, and digital creators. Replace bracketed placeholders with your personal details.]
+              </p>
+
+              <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                  <span>View Projects</span>
+                  <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                  <span>Contact Me</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive NLE Timeline & Edit Pass Deck -->
+            <div class="hero-visual">
+              <div class="code-specimen-card" aria-label="Interactive post-production timeline breakdown">
+                <div class="specimen-header">
+                  <div class="specimen-tabs" role="tablist" aria-label="Post-production workflow layers">
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected="true"
+                      aria-controls="panel-cut"
+                      id="tab-cut"
+                      class="specimen-tab active"
+                      data-code-tab="cut"
+                    >
+                      01. Story Cut
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="panel-grade"
+                      id="tab-grade"
+                      class="specimen-tab"
+                      data-code-tab="grade"
+                    >
+                      02. Grade
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected="false"
+                      aria-controls="panel-audio"
+                      id="tab-audio"
+                      class="specimen-tab"
+                      data-code-tab="audio"
+                    >
+                      03. Sound Mix
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    class="specimen-copy-btn"
+                    id="copy-specimen-btn"
+                    aria-label="Copy delivery specs"
+                  >
+                    Copy Specs
+                  </button>
+                </div>
+
+                <!-- Visual NLE Timeline Graphic -->
+                <div class="timeline-monitor-graphic" aria-hidden="true">
+                  <svg viewBox="0 0 460 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="460" height="110" fill="#101211" />
+                    <!-- Timecode Ruler -->
+                    <line x1="0" y1="20" x2="460" y2="20" stroke="#343A35" stroke-width="1" />
+                    <line x1="60" y1="12" x2="60" y2="20" stroke="#A5ACA5" stroke-width="1" />
+                    <line x1="150" y1="12" x2="150" y2="20" stroke="#A5ACA5" stroke-width="1" />
+                    <line x1="240" y1="12" x2="240" y2="20" stroke="#B8FF65" stroke-width="1.5" />
+                    <line x1="330" y1="12" x2="330" y2="20" stroke="#A5ACA5" stroke-width="1" />
+                    <line x1="420" y1="12" x2="420" y2="20" stroke="#A5ACA5" stroke-width="1" />
+                    <!-- V2 Track: B-Roll & Graphics -->
+                    <rect x="16" y="30" width="54" height="18" rx="2" fill="#252A26" stroke="#343A35" />
+                    <rect x="82" y="30" width="110" height="18" rx="2" fill="#252A26" stroke="#B8FF65" stroke-width="1.2" />
+                    <rect x="204" y="30" width="96" height="18" rx="2" fill="#252A26" stroke="#343A35" />
+                    <rect x="312" y="30" width="128" height="18" rx="2" fill="#252A26" stroke="#343A35" />
+                    <!-- V1 Track: Primary A-Roll -->
+                    <rect x="16" y="54" width="168" height="20" rx="2" fill="#B8FF65" fill-opacity="0.18" stroke="#B8FF65" stroke-width="1.2" />
+                    <rect x="188" y="54" width="136" height="20" rx="2" fill="#252A26" stroke="#343A35" />
+                    <rect x="328" y="54" width="112" height="20" rx="2" fill="#B8FF65" fill-opacity="0.18" stroke="#B8FF65" stroke-width="1.2" />
+                    <!-- A1 Track: Audio Waveform -->
+                    <path d="M16 90 L32 84 L48 94 L64 82 L80 92 L96 85 L112 95 L128 80 L144 92 L160 86 L176 93 L192 82 L208 94 L224 81 L240 95 L256 83 L272 91 L288 85 L304 94 L320 82 L336 93 L352 84 L368 92 L384 83 L400 94 L416 86 L440 90" stroke="#B8FF65" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- Electric Lime Playhead -->
+                    <line x1="240" y1="6" x2="240" y2="106" stroke="#B8FF65" stroke-width="1.5" />
+                    <polygon points="235,6 245,6 240,13" fill="#B8FF65" />
+                  </svg>
+                </div>
+
+                <!-- Tab Panels -->
+                <div class="specimen-body">
+                  <pre
+                    id="panel-cut"
+                    role="tabpanel"
+                    aria-labelledby="tab-cut"
+                    class="specimen-pre active"
+                    data-code-panel="cut"
+                  ><code>SEQUENCE  : [Showreel_Master_v04]
+FORMAT    : 3840 &times; 2160 (4K UHD) &middot; 23.976 fps
+DURATION  : 00:00:00:00 &rarr; 00:01:45:12
+FOCUS     : Hook pacing, J/L cuts, beat assembly
+TRACKS    : V1 A-Roll &middot; V2 B-Roll &middot; V3 Titles</code></pre>
+
+                  <pre
+                    id="panel-grade"
+                    role="tabpanel"
+                    aria-labelledby="tab-grade"
+                    class="specimen-pre"
+                    data-code-panel="grade"
+                    hidden
+                  ><code>PIPELINE  : DaVinci Wide Gamut &rarr; Rec.709 2.4
+NODE 01   : Primary Exposure &amp; White Balance
+NODE 02   : Contrast S-Curve &amp; Roll-Off
+NODE 03   : Skin Tone Line &amp; Hue Balance
+NODE 04   : Subtle Film Halation &amp; 35mm Grain</code></pre>
+
+                  <pre
+                    id="panel-audio"
+                    role="tabpanel"
+                    aria-labelledby="tab-audio"
+                    class="specimen-pre"
+                    data-code-panel="audio"
+                    hidden
+                  ><code>BUS A1 DX : Dialogue Isolation &amp; EQ (-3 dB)
+BUS A2 FX : Risers, Hits, Foley &amp; Room Tone
+BUS A3 MX : Beat-Matched Score &amp; Ducking
+LOUDNESS  : -14.0 LUFS &middot; -1.0 dBTP True Peak</code></pre>
+                </div>
+
+                <div class="specimen-footer">
+                  <span class="specimen-meta">TC 00:00:42:18 &middot; 4K ProRes 422 HQ / H.264</span>
+                  <span class="specimen-line-count" id="specimen-status">100% Static Frontend &middot; Ready for GitHub Pages</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full-Width Key Overview Bar Below Hero Split -->
+          <div class="hero-metrics-strip" aria-label="Video editing specifications overview">
+            <div class="metric-item">
+              <span class="metric-label">Primary Craft</span>
+              <strong class="metric-value">Offline &amp; Online Video Editing</strong>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Post-Production</span>
+              <strong class="metric-value">Colour Grading &middot; Sound Design</strong>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Delivery Formats</span>
+              <strong class="metric-value placeholder-token">4K 16:9 Cinema &middot; 9:16 Vertical</strong>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Current Availability</span>
+              <strong class="metric-value text-lime placeholder-token">[Open for Bookings &amp; Projects]</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ABOUT SECTION -->
+      <section id="about" class="section about-section section-reveal" aria-labelledby="about-heading">
+        <div class="container">
+          <div class="section-header-row">
+            <div>
+              <p class="section-index">01. Story &amp; Background</p>
+              <h2 id="about-heading" class="section-title">About Me &amp; My Editing Journey</h2>
+            </div>
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm"
+              id="toggle-placeholders-btn"
+              aria-pressed="false"
+            >
+              Highlight Placeholders
+            </button>
+          </div>
+
+          <div class="about-grid">
+            <!-- Left Column: Personal Introduction & Editing Journey -->
+            <div class="about-narrative">
+              <p class="lead-paragraph placeholder-token">
+                [Introduction Placeholder: Hello! I&rsquo;m [Your Name], a video editor based in [Your Location]. I specialize in turning hours of raw camera footage into tight, engaging visual stories driven by rhythm, emotion, and sound.]
+              </p>
+              <p class="body-paragraph placeholder-token">
+                [Editing Journey Placeholder: Share how you got started in video editing—what sparked your passion for cutting footage, how you learned pacing, storytelling, colour grading, and sound design, and the types of edits you love crafting most.]
+              </p>
+              <p class="body-paragraph placeholder-token">
+                [Current Focus &amp; Goals Placeholder: Describe the clients, creators, agencies, or production teams you are looking to collaborate with next—whether commercial campaigns, YouTube documentaries, music videos, or short-form brand reels.]
+              </p>
+
+              <div class="about-quick-facts">
+                <div class="fact-block">
+                  <span class="fact-label">Primary NLE Suite</span>
+                  <span class="fact-value placeholder-token">[Premiere Pro &middot; DaVinci Resolve &middot; After Effects]</span>
+                </div>
+                <div class="fact-block">
+                  <span class="fact-label">Core Formats</span>
+                  <span class="fact-value placeholder-token">[Commercials &middot; Documentary &middot; Creator Content]</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Editing Philosophy & Craft Principles -->
+            <div class="about-principles" aria-label="Core Video Editing Principles">
+              <div class="principle-item">
+                <div class="principle-index">01</div>
+                <div class="principle-content">
+                  <h3 class="principle-title">Story &amp; Pacing First</h3>
+                  <p class="principle-desc">
+                    Cutting on emotion, movement, and narrative momentum so every frame earns its screen time and holds audience retention from the opening hook to the final frame.
+                  </p>
+                </div>
+              </div>
+
+              <div class="principle-item">
+                <div class="principle-index">02</div>
+                <div class="principle-content">
+                  <h3 class="principle-title">Intentional Colour &amp; Visual Tone</h3>
+                  <p class="principle-desc">
+                    Matching multi-camera exposures, protecting natural skin tones, and sculpting contrast and colour palettes that reinforce the mood of the story.
+                  </p>
+                </div>
+              </div>
+
+              <div class="principle-item">
+                <div class="principle-index">03</div>
+                <div class="principle-content">
+                  <h3 class="principle-title">Immersive Sound &amp; Rhythm</h3>
+                  <p class="principle-desc">
+                    Treating sound as half the picture—layering clean dialogue, room tone, tactile foley, risers, and musical stems to make transitions feel seamless.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SKILLS SECTION -->
+      <section id="skills" class="section skills-section section-reveal" aria-labelledby="skills-heading">
+        <div class="container">
+          <div class="section-header-row">
+            <div>
+              <p class="section-index">02. Post-Production Capabilities</p>
+              <h2 id="skills-heading" class="section-title">Editing &amp; Post-Production Craft</h2>
+            </div>
+            <p class="section-subtitle">
+              End-to-end post-production workflow from ingest and assembly to final colour, mix, and multi-format delivery.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Skill Card 1: Narrative & Rhythm Editing -->
+            <article class="skill-card" data-skill="editing">
+              <div class="skill-card-top">
+                <div class="skill-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                    <line x1="7" y1="2" x2="7" y2="22"></line>
+                    <line x1="17" y1="2" x2="17" y2="22"></line>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <line x1="2" y1="7" x2="7" y2="7"></line>
+                    <line x1="2" y1="17" x2="7" y2="17"></line>
+                    <line x1="17" y1="17" x2="22" y2="17"></line>
+                    <line x1="17" y1="7" x2="22" y2="7"></line>
+                  </svg>
+                </div>
+                <span class="skill-number">01 / Assembly &amp; Pacing</span>
+              </div>
+
+              <h3 class="skill-title">Video Editing &amp; Storytelling</h3>
+              <p class="skill-summary">
+                Structuring raw footage into compelling narratives with sharp hook construction, seamless J/L cuts, and rhythmic pacing.
+              </p>
+
+              <!-- Visual Skill Indicator -->
+              <div class="skill-meter-group">
+                <div class="skill-meter-header">
+                  <span class="skill-meter-label">Focus &amp; Comfort Level</span>
+                  <span class="skill-meter-value placeholder-token">[Placeholder: Core Strength]</span>
+                </div>
+                <div class="skill-segments" role="img" aria-label="Video Editing skill indicator: 5 out of 5 segments active">
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                </div>
+              </div>
+
+              <!-- Unboxed Metadata Topics -->
+              <p class="skill-topics">
+                Narrative Assembly &middot; Multi-Cam Sync &middot; Hook &amp; Retention Pacing &middot; J &amp; L Cuts &middot; Proxy Workflows
+              </p>
+
+              <!-- Interactive Disclosure for Practical Examples -->
+              <button
+                type="button"
+                class="skill-detail-toggle"
+                aria-expanded="false"
+                aria-controls="skill-details-editing"
+              >
+                <span>View Practical Focus Areas</span>
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="skill-details-list" id="skill-details-editing" hidden>
+                <li>Organizing large multi-camera shoots with synced timecode, bins, and stringouts.</li>
+                <li>Pacing cuts to dialogue cadence and musical beats to maintain viewer engagement.</li>
+                <li>Crafting invisible match cuts, speed ramps, and kinetic visual transitions.</li>
+              </ul>
+            </article>
+
+            <!-- Skill Card 2: Colour Grading & Motion Graphics -->
+            <article class="skill-card" data-skill="colour">
+              <div class="skill-card-top">
+                <div class="skill-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="13.5" cy="6.5" r="4.5"></circle>
+                    <circle cx="17.5" cy="15.5" r="4.5"></circle>
+                    <circle cx="8.5" cy="15.5" r="4.5"></circle>
+                  </svg>
+                </div>
+                <span class="skill-number">02 / Colour &amp; Motion</span>
+              </div>
+
+              <h3 class="skill-title">Colour Grading &amp; Motion</h3>
+              <p class="skill-summary">
+                Balancing exposure, converting log profiles, developing cohesive visual looks, and designing clean title animations.
+              </p>
+
+              <!-- Visual Skill Indicator -->
+              <div class="skill-meter-group">
+                <div class="skill-meter-header">
+                  <span class="skill-meter-label">Focus &amp; Comfort Level</span>
+                  <span class="skill-meter-value placeholder-token">[Placeholder: Core Strength]</span>
+                </div>
+                <div class="skill-segments" role="img" aria-label="Colour Grading and Motion skill indicator: 5 out of 5 segments active">
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                </div>
+              </div>
+
+              <!-- Unboxed Metadata Topics -->
+              <p class="skill-topics">
+                Log-to-Rec.709 Conversion &middot; Shot Matching &middot; Scopes &amp; Qualifiers &middot; Kinetic Typography &middot; Keyframe Curves
+              </p>
+
+              <!-- Interactive Disclosure for Practical Examples -->
+              <button
+                type="button"
+                class="skill-detail-toggle"
+                aria-expanded="false"
+                aria-controls="skill-details-colour"
+              >
+                <span>View Practical Focus Areas</span>
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="skill-details-list" id="skill-details-colour" hidden>
+                <li>Reading Parade, Waveform, and Vectorscope monitors for accurate exposure and skin tone line alignment.</li>
+                <li>Designing custom lower thirds, animated captions, and callout graphics with smooth bezier easing.</li>
+                <li>Stabilizing handheld shots and cleaning up visual distractions in post.</li>
+              </ul>
+            </article>
+
+            <!-- Skill Card 3: Sound Design & Mastering -->
+            <article class="skill-card" data-skill="sound">
+              <div class="skill-card-top">
+                <div class="skill-icon-box" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 10v3"></path>
+                    <path d="M6 6v11"></path>
+                    <path d="M10 3v18"></path>
+                    <path d="M14 8v7"></path>
+                    <path d="M18 5v13"></path>
+                    <path d="M22 10v3"></path>
+                  </svg>
+                </div>
+                <span class="skill-number">03 / Audio &amp; Delivery</span>
+              </div>
+
+              <h3 class="skill-title">Sound Design &amp; Delivery</h3>
+              <p class="skill-summary">
+                Polishing dialogue clarity, layering atmospheric sound effects, mixing musical stems, and exporting broadcast-ready masters.
+              </p>
+
+              <!-- Visual Skill Indicator -->
+              <div class="skill-meter-group">
+                <div class="skill-meter-header">
+                  <span class="skill-meter-label">Focus &amp; Comfort Level</span>
+                  <span class="skill-meter-value placeholder-token">[Placeholder: Strong Foundation]</span>
+                </div>
+                <div class="skill-segments" role="img" aria-label="Sound Design and Delivery skill indicator: 4 out of 5 segments active">
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment active"></span>
+                  <span class="segment"></span>
+                </div>
+              </div>
+
+              <!-- Unboxed Metadata Topics -->
+              <p class="skill-topics">
+                Dialogue Cleanup &amp; EQ &middot; SFX &amp; Foley Layering &middot; -14 LUFS Mastering &middot; 16:9 &amp; 9:16 Reframing &middot; Frame.io Review
+              </p>
+
+              <!-- Interactive Disclosure for Practical Examples -->
+              <button
+                type="button"
+                class="skill-detail-toggle"
+                aria-expanded="false"
+                aria-controls="skill-details-sound"
+              >
+                <span>View Practical Focus Areas</span>
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="skill-details-list" id="skill-details-sound" hidden>
+                <li>Removing background hum/noise and balancing voiceover presence against background score.</li>
+                <li>Building custom sound effects layers (risers, hits, room tone, and foley accents) to sell visual cuts.</li>
+                <li>Delivering optimized masters and social cutdowns (16:9, 4:5, 9:16) with accurate loudness standards.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. PROJECTS SECTION -->
+      <section id="projects" class="section projects-section section-reveal" aria-labelledby="projects-heading">
+        <div class="container">
+          <div class="projects-header-bar">
+            <div>
+              <p class="section-index">03. Showreel &amp; Selected Cuts</p>
+              <h2 id="projects-heading" class="section-title">Featured Video Projects</h2>
+            </div>
+
+            <!-- Interactive Filter Bar (Functional Buttons) -->
+            <div class="filter-bar-wrapper">
+              <div class="project-filters" role="group" aria-label="Filter video projects by genre">
+                <button type="button" class="filter-btn active" data-filter="all">
+                  All Cuts
+                </button>
+                <button type="button" class="filter-btn" data-filter="commercial">
+                  Commercial &amp; Brand
+                </button>
+                <button type="button" class="filter-btn" data-filter="documentary">
+                  Documentary &amp; Narrative
+                </button>
+                <button type="button" class="filter-btn" data-filter="social">
+                  Short-Form &amp; Social
+                </button>
+              </div>
+              <p class="projects-count" id="projects-count-label" aria-live="polite">
+                Showing 3 of 3 projects
+              </p>
+            </div>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects-grid" id="projects-grid">
+            <!-- Project Card 01 -->
+            <article
+              class="project-card"
+              data-categories="commercial"
+              data-project-id="project-1"
+            >
+              <div class="project-preview" aria-hidden="true">
+                <!-- Cinema Monitor & NLE Cut Preview 01 -->
+                <svg class="project-svg" viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="480" height="270" fill="#101211" />
+                  <rect x="24" y="20" width="432" height="230" rx="6" fill="#252A26" stroke="#343A35" stroke-width="1.5" />
+                  <!-- Widescreen 2.39:1 Frame Preview -->
+                  <rect x="40" y="36" width="400" height="126" rx="4" fill="#101211" stroke="#343A35" stroke-width="1.5" />
+                  <!-- Safe Area Guides & Center Crosshair -->
+                  <rect x="56" y="48" width="368" height="102" stroke="#343A35" stroke-dasharray="4 4" />
+                  <circle cx="240" cy="99" r="22" fill="#252A26" stroke="#B8FF65" stroke-width="1.5" />
+                  <polygon points="236,91 250,99 236,107" fill="#B8FF65" />
+                  <text x="66" y="64" fill="#B8FF65" font-family="monospace" font-size="10">REC &middot; 4K 24FPS</text>
+                  <text x="352" y="64" fill="#A5ACA5" font-family="monospace" font-size="10">00:00:38:14</text>
+                  <!-- Timeline Tracks Underneath -->
+                  <rect x="40" y="176" width="110" height="16" rx="2" fill="#B8FF65" />
+                  <rect x="156" y="176" width="140" height="16" rx="2" fill="#101211" stroke="#B8FF65" stroke-width="1.2" />
+                  <rect x="302" y="176" width="138" height="16" rx="2" fill="#101211" stroke="#343A35" stroke-width="1.2" />
+                  <rect x="40" y="198" width="400" height="14" rx="2" fill="#101211" stroke="#343A35" />
+                  <path d="M48 205 L90 201 L130 209 L175 200 L220 208 L265 201 L315 209 L365 202 L430 205" stroke="#B8FF65" stroke-width="1.2" />
+                  <line x1="212" y1="168" x2="212" y2="238" stroke="#B8FF65" stroke-width="1.5" />
+                </svg>
+              </div>
+
+              <div class="project-body">
+                <p class="project-kicker">01 &middot; Commercial &amp; Brand Cut</p>
+                <h3 class="project-title placeholder-token">
+                  [Project Title 01 &mdash; e.g., High-Energy Brand Commercial or Showreel]
+                </h3>
+                <p class="project-description placeholder-token">
+                  [Project Description Placeholder: Describe the creative brief, how you paced the cuts to the soundtrack, matched multi-cam shots in colour grading, and delivered the final spot.]
+                </p>
+
+                <!-- Clean Unboxed Specifications Metadata (Zero-Pill Discipline) -->
+                <p class="project-tech-meta">
+                  <span>16:9 4K Master</span>
+                  <span aria-hidden="true">&middot;</span>
+                  <span>Offline/Online Edit</span>
+                  <span aria-hidden="true">&middot;</span>
+                  <span>Colour &amp; SFX</span>
+                </p>
+
+                <div class="project-actions">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-sm project-demo-btn"
+                    data-open-project="project-1"
+                  >
+                    <span>Watch Cut / Breakdown</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </button>
+                  <a
+                    href="https://vimeo.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary btn-sm"
+                    aria-label="Full Video Link for Project 01 (opens video host placeholder)"
+                  >
+                    <span>Full Video</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 02 -->
+            <article
+              class="project-card"
+              data-categories="documentary"
+              data-project-id="project-2"
+            >
+              <div class="project-preview" aria-hidden="true">
+                <!-- Documentary A/B Roll & Audio Stem Preview 02 -->
+                <svg class="project-svg" viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="480" height="270" fill="#101211" />
+                  <rect x="24" y="20" width="432" height="230" rx="6" fill="#252A26" stroke="#343A35" stroke-width="1.5" />
+                  <!-- Dual Source / Program Monitor Preview -->
+                  <rect x="44" y="38" width="188" height="106" rx="4" fill="#101211" stroke="#343A35" stroke-width="1.2" />
+                  <text x="56" y="56" fill="#A5ACA5" font-family="monospace" font-size="9">CAM A &middot; INTERVIEW</text>
+                  <circle cx="138" cy="94" r="18" stroke="#A5ACA5" stroke-width="1.2" />
+
+                  <rect x="248" y="38" width="188" height="106" rx="4" fill="#101211" stroke="#B8FF65" stroke-width="1.2" />
+                  <text x="260" y="56" fill="#B8FF65" font-family="monospace" font-size="9">PROGRAM &middot; FINAL CUT</text>
+                  <circle cx="342" cy="94" r="18" fill="#B8FF65" fill-opacity="0.2" stroke="#B8FF65" stroke-width="1.5" />
+                  <polygon points="339,88 349,94 339,100" fill="#B8FF65" />
+
+                  <!-- Multi-Track Documentary Timeline -->
+                  <rect x="44" y="160" width="140" height="18" rx="2" fill="#101211" stroke="#B8FF65" stroke-width="1.2" />
+                  <rect x="192" y="160" width="110" height="18" rx="2" fill="#B8FF65" />
+                  <rect x="310" y="160" width="126" height="18" rx="2" fill="#101211" stroke="#343A35" stroke-width="1.2" />
+
+                  <rect x="44" y="184" width="230" height="18" rx="2" fill="#101211" stroke="#343A35" stroke-width="1.2" />
+                  <rect x="282" y="184" width="154" height="18" rx="2" fill="#101211" stroke="#B8FF65" stroke-width="1.2" />
+
+                  <rect x="44" y="208" width="392" height="18" rx="2" fill="#101211" stroke="#343A35" stroke-width="1.2" />
+                  <line x1="60" y1="217" x2="420" y2="217" stroke="#B8FF65" stroke-width="1.5" stroke-dasharray="6 4" />
+                </svg>
+              </div>
+
+              <div class="project-body">
+                <p class="project-kicker">02 &middot; Documentary &amp; Narrative Assembly</p>
+                <h3 class="project-title placeholder-token">
+                  [Project Title 02 &mdash; e.g., Short Documentary or Long-Form Video Essay]
+                </h3>
+                <p class="project-description placeholder-token">
+                  [Project Description Placeholder: Explain how you shaped the story arc from interview transcripts, layered B-roll sequences and archival footage, and balanced dialogue with ambient score.]
+                </p>
+
+                <!-- Clean Unboxed Specifications Metadata -->
+                <p class="project-tech-meta">
+                  <span>Narrative Story Arc</span>
+                  <span aria-hidden="true">&middot;</span>
+                  <span>Multi-Cam Sync</span>
+                  <span aria-hidden="true">&middot;</span>
+                  <span>Dialogue &amp; Score Mix</span>
+                </p>
+
+                <div class="project-actions">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-sm project-demo-btn"
+                    data-open-project="project-2"
+                  >
+                    <span>Watch Cut / Breakdown</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </button>
+                  <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary btn-sm"
+                    aria-label="Full Video Link for Project 02 (opens video host placeholder)"
+                  >
+                    <span>Full Video</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 03 -->
+            <article
+              class="project-card"
+              data-categories="social commercial"
+              data-project-id="project-3"
+            >
+              <div class="project-preview" aria-hidden="true">
+                <!-- Vertical 9:16 Social & Motion Graphics Preview 03 -->
+                <svg class="project-svg" viewBox="0 0 480 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="480" height="270" fill="#101211" />
+                  <rect x="24" y="20" width="432" height="230" rx="6" fill="#252A26" stroke="#343A35" stroke-width="1.5" />
+                  <!-- Left: 9:16 Vertical Frame Preview -->
+                  <rect x="52" y="38" width="108" height="192" rx="8" fill="#101211" stroke="#B8FF65" stroke-width="1.5" />
+                  <rect x="68" y="156" width="76" height="12" rx="2" fill="#B8FF65" />
+                  <rect x="76" y="174" width="60" height="8" rx="2" fill="#F4F5F0" fill-opacity="0.7" />
+                  <circle cx="106" cy="100" r="16" stroke="#B8FF65" stroke-width="1.5" />
+                  <polygon points="103,94 113,100 103,106" fill="#B8FF65" />
+                  <!-- Right: Speed Ramp Curve & Audio Meters -->
+                  <rect x="184" y="38" width="248" height="114" rx="4" fill="#101211" stroke="#343A35" stroke-width="1.2" />
+                  <text x="200" y="58" fill="#A5ACA5" font-family="monospace" font-size="9">SPEED RAMP &middot; VELOCITY GRAPH</text>
+                  <path d="M200 132 C245 132, 260 68, 305 68 C350 68, 365 132, 412 132" stroke="#B8FF65" stroke-width="2" fill="none" />
+                  <circle cx="305" cy="68" r="4" fill="#B8FF65" />
+
+                  <rect x="184" y="164" width="248" height="66" rx="4" fill="#101211" stroke="#343A35" stroke-width="1.2" />
+                  <text x="200" y="182" fill="#A5ACA5" font-family="monospace" font-size="9">RETENTION HOOK &amp; SFX LAYERS</text>
+                  <rect x="200" y="194" width="90" height="10" rx="2" fill="#B8FF65" />
+                  <rect x="298" y="194" width="116" height="10" rx="2" fill="#252A26" stroke="#343A35" />
+                  <rect x="200" y="210" width="160" height="8" rx="2" fill="#F4F5F0" fill-opacity="0.6" />
+                </svg>
+              </div>
+
+              <div class="project-body">
+                <p class="project-kicker">03 &middot; Short-Form &amp; Motion Edit</p>
+                <h3 class="project-title placeholder-token">
+                  [Project Title 03 &mdash; e.g., High-Retention Vertical Reels or Motion Edit]
+                </h3>
+                <p class="project-description placeholder-token">
+                  [Project Description Placeholder: Highlight how you designed the 3-second visual hook, kinetic captions, speed ramps, and layered sound effects for vertical social platforms.]
+                </p>
+
+                <!-- Clean Unboxed Specifications Metadata -->
+                <p class="project-tech-meta">
+                  <span>9:16 Vertical &amp; 16:9</span>
+                  <span aria-hidden="true">&middot;</span>
+                  <span>Kinetic Captions</span>
+                  <span aria-hidden="true">&middot;</span>
+                  <span>Speed Ramping</span>
+                </p>
+
+                <div class="project-actions">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-sm project-demo-btn"
+                    data-open-project="project-3"
+                  >
+                    <span>Watch Cut / Breakdown</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </button>
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary btn-sm"
+                    aria-label="Full Video Link for Project 03 (opens video host placeholder)"
+                  >
+                    <span>Full Video</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. CONTACT SECTION -->
+      <section id="contact" class="section contact-section section-reveal" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Left Column: Direct Links & Call to Action -->
+            <div class="contact-info">
+              <p class="section-index">04. Book an Edit / Get In Touch</p>
+              <h2 id="contact-heading" class="section-title">
+                Let&rsquo;s cut something unforgettable.
+              </h2>
+              <p class="contact-lead placeholder-token">
+                [Contact Intro Placeholder: Available for freelance video editing, post-production retainers, commercial campaigns, and creator collaborations. Reach out via email or view my channels below.]
+              </p>
+
+              <!-- Direct Email Action Box -->
+              <div class="email-action-card">
+                <div class="email-details">
+                  <span class="email-label">Direct Booking &amp; Inquiries</span>
+                  <a href="mailto:your.email@example.com" class="email-address placeholder-token" id="contact-email-text">
+                    your.email@example.com
+                  </a>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  id="copy-email-btn"
+                  aria-label="Copy email address to clipboard"
+                >
+                  Copy Email
+                </button>
+              </div>
+
+              <!-- Working Video Channels & Social Links -->
+              <div class="social-links-block">
+                <h3 class="social-heading">Showreels &amp; Social Channels</h3>
+                <ul class="social-links-list">
+                  <li>
+                    <a
+                      href="https://www.youtube.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="social-link"
+                    >
+                      <span>YouTube / Showreel &mdash; <span class="placeholder-token">@your-channel</span></span>
+                      <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://vimeo.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="social-link"
+                    >
+                      <span>Vimeo Portfolio &mdash; <span class="placeholder-token">vimeo.com/your-name</span></span>
+                      <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="social-link"
+                    >
+                      <span>Instagram / Reels &mdash; <span class="placeholder-token">@your-handle</span></span>
+                      <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="social-link"
+                    >
+                      <span>LinkedIn &mdash; <span class="placeholder-token">/in/your-profile</span></span>
+                      <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Right Column: 100% Client-Side Project Inquiry Builder (No Backend Required) -->
+            <div class="contact-form-card">
+              <div class="form-card-header-row">
+                <h3 class="form-card-title">Quick Project Inquiry Builder</h3>
+                <span class="client-only-label">Client-Side Only &middot; No Server Needed</span>
+              </div>
+              <p class="form-card-subtitle">
+                Build your project brief right in the browser. It formats a ready-to-send email link or copies the structured brief for direct messaging—no backend required.
+              </p>
+
+              <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                  <label for="sender-name" class="form-label">Your Name <span class="text-lime">*</span></label>
+                  <input
+                    type="text"
+                    id="sender-name"
+                    name="name"
+                    class="form-input"
+                    placeholder="Alex Rivera"
+                    required
+                    autocomplete="name"
+                    aria-describedby="error-name"
+                  />
+                  <p class="form-error" id="error-name" role="alert" hidden></p>
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-email" class="form-label">Your Email <span class="text-lime">*</span></label>
+                  <input
+                    type="email"
+                    id="sender-email"
+                    name="email"
+                    class="form-input"
+                    placeholder="alex@studio.com"
+                    required
+                    autocomplete="email"
+                    aria-describedby="error-email"
+                  />
+                  <p class="form-error" id="error-email" role="alert" hidden></p>
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-subject" class="form-label">Project Format / Deliverable</label>
+                  <div class="format-quick-picks" role="group" aria-label="Quick select project format">
+                    <button type="button" class="format-pick-btn" data-format-pick="Commercial & Brand Cut">Commercial</button>
+                    <button type="button" class="format-pick-btn" data-format-pick="Documentary / YouTube Edit">Documentary</button>
+                    <button type="button" class="format-pick-btn" data-format-pick="Short-Form Vertical Reels">Short-Form</button>
+                    <button type="button" class="format-pick-btn" data-format-pick="Colour Grading & Sound Mix">Colour &amp; Sound</button>
+                  </div>
+                  <input
+                    type="text"
+                    id="sender-subject"
+                    name="subject"
+                    class="form-input"
+                    placeholder="Commercial Cut / Documentary / YouTube Edit"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-message" class="form-label">Project Brief &amp; Timeline <span class="text-lime">*</span></label>
+                  <textarea
+                    id="sender-message"
+                    name="message"
+                    rows="4"
+                    class="form-input form-textarea"
+                    placeholder="Tell me about your footage, target duration, delivery aspect ratios, and deadline..."
+                    required
+                    aria-describedby="error-message"
+                  ></textarea>
+                  <p class="form-error" id="error-message" role="alert" hidden></p>
+                </div>
+
+                <div class="form-actions-row">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Generate Email &amp; DM Brief
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    id="clear-draft-btn"
+                    aria-label="Clear saved browser draft"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <p class="draft-status-note" id="draft-status-note" aria-live="polite">
+                  Drafts are saved locally in your browser (localStorage).
+                </p>
+              </form>
+
+              <!-- Form Feedback / Prepared Message Output (100% Static Frontend) -->
+              <div id="form-success-panel" class="form-success-panel" role="status" aria-live="polite" hidden>
+                <div class="success-header">
+                  <strong class="success-title text-lime">Brief Ready (Zero-Backend Delivery)</strong>
+                  <button type="button" class="text-btn" id="reset-form-btn">Edit Brief</button>
+                </div>
+                <p class="success-body" id="prepared-message-summary"></p>
+                <div class="success-actions">
+                  <a href="mailto:your.email@example.com" id="mailto-launch-link" class="btn btn-primary btn-sm">
+                    Open in Email App
+                  </a>
+                  <button type="button" id="copy-message-btn" class="btn btn-secondary btn-sm">
+                    Copy Brief for DM / Gmail
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-copy">
+          &copy; <span id="current-year">2026</span> <span class="placeholder-token">[Your Name]</span> &middot; Video Editor &amp; Post-Production Portfolio.
+        </p>
+        <div class="footer-links">
+          <a href="#top" class="footer-link">Back to top &uarr;</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Accessible Video Screening & Edit Breakdown Modal -->
+    <dialog id="project-modal" class="project-modal" aria-labelledby="modal-project-title">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div>
+            <p class="modal-kicker" id="modal-project-kicker">Interactive Cut &amp; Timeline Breakdown</p>
+            <h2 class="modal-title" id="modal-project-title">Project Screening Room</h2>
+          </div>
+          <button
+            type="button"
+            class="modal-close-btn"
+            id="close-modal-btn"
+            aria-label="Close video breakdown modal"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <p class="modal-description" id="modal-project-desc"></p>
+
+          <!-- Interactive Post-Production Inspector inside Modal -->
+          <div class="modal-sandbox" id="modal-sandbox-area">
+            <!-- Populated dynamically by script.js based on selected video project -->
+          </div>
+
+          <div class="modal-customization-note">
+            <strong>Portfolio Tip:</strong> Replace the video link placeholder in <code>index.html</code> with your hosted <code>YouTube</code>, <code>Vimeo</code>, or <code>Frame.io</code> share link, or embed an <code>&lt;iframe&gt;</code> / <code>&lt;video&gt;</code> player directly inside this screening modal.
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <a
+            href="https://vimeo.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-sm"
+            id="modal-source-link"
+          >
+            <span>Open Full Video Link</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <button type="button" class="btn btn-primary btn-sm" id="modal-done-btn">
+            Close Screening Room
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Main Vanilla JavaScript File -->
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
